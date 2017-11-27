@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Tooltip;
 
 public class AdminController {
 
@@ -17,6 +18,11 @@ public class AdminController {
 
 	@FXML
 	private Button btn_listakurs;
+
+	@FXML Tooltip tt_wyjd;
+	
+
+
 
 	@FXML
 	void przejdzBaza(MouseEvent event) throws IOException {
