@@ -13,6 +13,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.control.Button;
 
 public class ListakursView {
@@ -20,7 +22,7 @@ public class ListakursView {
 	@FXML
 	TableView<Users> table_view;
 
-	// obiekt poÅ‚Ä…czenia z db
+	// obiekt po³¹czenia z db
 	public DBConnector db;
 
 	// obiekt do przechowywania listy
@@ -52,4 +54,30 @@ public class ListakursView {
 		table_view.setItems(data);
 
 	}
+	
+	//Filtrowanie
+	/*@FXML
+	public void filter(KeyEvent event) throws ClassNotFoundException, SQLException {
+		Connection conn = db.Connection();
+		data = FXCollections.observableArrayList();
+		String szukaj = tf_filter.getText();
+		ResultSet rs = conn.createStatement().executeQuery("Select * from users where locate('" + szukaj
+				+ "',name)!=0 or locate('" + szukaj + "',last)!=0 or locate('" + szukaj + "',position)!=0;");
+
+		while (rs.next()) {
+			data.add(new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getString(5)));
+
+		}
+		id.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
+		name.setCellValueFactory(new PropertyValueFactory<Users, String>("name"));
+		last.setCellValueFactory(new PropertyValueFactory<Users, String>("last"));
+		salary.setCellValueFactory(new PropertyValueFactory<Users, Double>("salary"));
+		position.setCellValueFactory(new PropertyValueFactory<Users, String>("position"));
+		table_view.setItems(null);
+		table_view.setItems(data);
+
+	}*/
+	
+	
+
 }
