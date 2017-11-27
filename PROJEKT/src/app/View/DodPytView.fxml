@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.DodPytController">
    <children>
       <Label contentDisplay="CENTER" layoutX="238.0" layoutY="14.0" text="Dodanie pytania" underline="true">
          <font>
@@ -26,9 +26,9 @@
       <TextArea fx:id="ta_bledna2" layoutX="19.0" layoutY="323.0" prefHeight="40.0" prefWidth="567.0" promptText="Wprowadź" wrapText="true" />
       <Label layoutX="20.0" layoutY="381.0" prefHeight="17.0" prefWidth="262.0" text="Błędna odpowiedź nr 3" />
       <TextArea fx:id="ta_bledna3" layoutX="20.0" layoutY="406.0" prefHeight="40.0" prefWidth="567.0" promptText="Wprowadź" wrapText="true" />
-      <Button fx:id="btn_zatwierdz" layoutX="87.0" layoutY="587.0" mnemonicParsing="false" text="Wstecz" />
-      <Button fx:id="btn_wtecz" layoutX="519.0" layoutY="587.0" mnemonicParsing="false" text="Zatwierdź" />
-      <Button fx:id="btn_wyjdz" layoutX="21.0" layoutY="587.0" mnemonicParsing="false" text="Wyjdź" />
+      <Button fx:id="btn_wstecz" layoutX="87.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#wsteczAdminView" text="Wstecz" />
+      <Button fx:id="btn_zatwierdz" layoutX="519.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#zatwierdz" text="Zatwierdź" />
+      <Button fx:id="btn_wyjdz" layoutX="21.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#wyjscie" text="Wyjdź" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="173.0" layoutY="462.0" prefHeight="17.0" prefWidth="262.0" text="Wybierz zakres" textAlignment="CENTER" underline="true">
          <font>
             <Font size="18.0" />
