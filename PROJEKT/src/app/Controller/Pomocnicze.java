@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.InputEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class Pomocnicze {
@@ -18,15 +19,16 @@ public class Pomocnicze {
 		// scene.getStylesheets().add(getClass().getResource("").toExternalForm());
 		stage.setScene(scene);
 		stage.setResizable(false);
+		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setTitle(naglowek);
 		stage.show();
 	}
 		
 	public void okno(String sciezka, String naglowek, InputEvent event) throws IOException {
 		this.okno(sciezka, naglowek);
+		
 		((Node) (event.getSource())).getScene().getWindow().hide();
 	}
-	
 	
 
 }

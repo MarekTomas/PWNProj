@@ -17,7 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.control.Button;
 
-public class ListakursController {
+public class ListakursView {
 
 	@FXML
 	TableView<Users> table_view;
