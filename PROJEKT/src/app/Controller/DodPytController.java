@@ -2,7 +2,10 @@ package app.Controller;
 
 import java.io.IOException;
 
+import app.Database.DBConnectorMW;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
@@ -51,18 +54,25 @@ public class DodPytController {
 
 	@FXML
 	void zatwierdz(MouseEvent event) {
+		
+		System.out.println(ra_zakres.getSelectedToggle());
+		
+		
+		
 		if (ta_pytanie.getText().isEmpty() || ta_popr_odp.getText().isEmpty() || ta_bledna1.getText().isEmpty()
 				|| ta_bledna2.getText().isEmpty() || ta_bledna3.getText().isEmpty()
-				|| ra_zakres.getSelectedToggle() == null);
-		
-		ta_pytanie.getText();
+				|| ra_zakres.getSelectedToggle() == null) {
 			
-			
-			
-			//lacznie z baza danych update	
-			//db	private String pytanie 
-			
-			System.out.println("dddddd");
+			Alert ostrz = new Alert(AlertType.WARNING); 
+			ostrz.setContentText("Nie zosta³y wype³nione wszystkie wymagane pola"); 
+			ostrz.setHeaderText("Wype³nij wszystkie pola"); 
+			ostrz.setTitle("Ostrze¿enie!"); 
+			ostrz.showAndWait(); 
+		}
+		//}else
+			DBConnectorMW baza = new DBConnectorMW();
+			String zakres = ra_zakres.selectedToggleProperty().toString();
+			//baza.insert("Insert into Pytania (zakres, pytania, odp_1, odp_2, odp_3, odp_poprawna) values ('"+Trim(ta_bledna1.getText())");
 
 	}
 

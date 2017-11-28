@@ -17,7 +17,7 @@ public class DBConnectorMW {
 		try {
 			// uwierzytelnianie sterownika
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/szpital?useSSL=false", "root",
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projektquiz?useSSL=false", "root",
 					"123MWreaktor");
 			stmt = con.createStatement();
 		} catch (Exception e) {
@@ -25,7 +25,7 @@ public class DBConnectorMW {
 		}
 	}
 
-	public void zapytanie(String query, String format, String naglowek2, String naglowek3) {
+	/*public void zapytanie(String query, String format, String naglowek2, String naglowek3) {
 
 		connect();
 		try {
@@ -43,9 +43,9 @@ public class DBConnectorMW {
 			System.out.println("\n!!!B³¹d na zapytaniu z czterema kolumnami (1):\n" + e);
 		}
 
-	}
+	}*/
 
-	public void zapytanie(String query, String format, String naglowek2, String naglowek3, String naglowek4) {
+	/*public void zapytanie(String query, String format, String naglowek2, String naglowek3, String naglowek4) {
 
 		connect();
 		try {
@@ -61,12 +61,12 @@ public class DBConnectorMW {
 			con.close();
 		} catch (SQLException e) {
 			System.out.println("\n!!!B³¹d na zapytaniu z piêcioma kolumnami (2):\n" + e);
-			;
+			
 		}
 
-	}
+	}*/
 
-	public void zapytanie(String query, String format, String naglowek2, String naglowek3, String naglowek4,
+	/*public void zapytanie(String query, String format, String naglowek2, String naglowek3, String naglowek4,
 			String naglowek5) {
 
 		connect();
@@ -86,7 +86,7 @@ public class DBConnectorMW {
 			System.out.println("\n!!!B³¹d na zapytaniu z 6-ioma kolumnami (3):" + e);
 
 		}
-	}
+	}*/
 
 	// ===========================================================================================
 	// wstawianie nowego rekordu/update
