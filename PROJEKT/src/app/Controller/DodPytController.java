@@ -2,7 +2,6 @@ package app.Controller;
 
 import java.io.IOException;
 
-import app.Database.DBConnectorMW;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -40,7 +39,26 @@ public class DodPytController {
 
 	@FXML
 	private ToggleGroup ra_zakres;
+	
+	static String pyt;
+	static String poprawna;
+	static String bledna1;
+	static String bledna2;
+	static String bledna3;
+	static String zakres;
 
+	
+	@FXML
+    void clearAll(MouseEvent event) {
+		ta_bledna1.clear();
+		ta_bledna2.clear();
+		ta_bledna3.clear();
+		ta_popr_odp.clear();
+		ta_pytanie.clear();
+		ra_zakres.selectToggle(null);
+		
+    }
+		
 	@FXML
 	void wsteczAdminView(MouseEvent event) throws IOException {
 		Pomocnicze przejdz = new Pomocnicze();
@@ -56,11 +74,11 @@ public class DodPytController {
 	@FXML
 	void zatwierdz(MouseEvent event) throws IOException {
 		
-		String pyt = ta_pytanie.getText();
-		String poprawna = ta_popr_odp.getText();
-		String bledna1 = ta_bledna1.getText();
-		String bledna2 = ta_bledna2.getText();
-		String bledna3 = ta_bledna2.getText();
+		pyt = ta_pytanie.getText();
+		poprawna = ta_popr_odp.getText();
+		bledna1 = ta_bledna1.getText();
+		bledna2 = ta_bledna2.getText();
+		bledna3 = ta_bledna2.getText();
 		
 		if (pyt.isEmpty() || poprawna.isEmpty() ||bledna1.isEmpty()
 				|| bledna2.isEmpty() || bledna3.isEmpty()
@@ -72,12 +90,14 @@ public class DodPytController {
 			ostrz.setTitle("Ostrze¿enie!");
 			ostrz.showAndWait();
 		} else {
-			String zakres = ((RadioButton) ra_zakres.getSelectedToggle()).getText();
+			zakres = ((RadioButton) ra_zakres.getSelectedToggle()).getText();
 						
 			Pomocnicze przejdz = new Pomocnicze();
 			przejdz.okno("/app/View/PotwPytanieView.fxml", "Zatwierdzenie pytania");
+			
 			
 		}
 	}
 
 }
+

@@ -16,11 +16,9 @@ public class Pomocnicze {
 		Parent parent = (Parent) FXMLLoader.load(getClass().getResource(sciezka));
 		Scene scene = new Scene(parent);
 		// scene.getStylesheets().add(getClass().getResource("").toExternalForm());
-		
 		stage.setScene(scene);
 		stage.setResizable(false);
 		stage.setTitle(naglowek);
-		
 		stage.show();
 	}
 		
@@ -28,6 +26,7 @@ public class Pomocnicze {
 		this.okno(sciezka, naglowek);
 		((Node) (event.getSource())).getScene().getWindow().hide();
 	}
+	
 	
 
 }

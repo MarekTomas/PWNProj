@@ -45,5 +45,6 @@
       <RadioButton layoutX="273.0" layoutY="531.0" mnemonicParsing="false" text="FE" toggleGroup="$ra_zakres" />
       <RadioButton layoutX="396.0" layoutY="504.0" mnemonicParsing="false" text="Java" toggleGroup="$ra_zakres" />
       <RadioButton layoutX="396.0" layoutY="529.0" mnemonicParsing="false" text="Spring" toggleGroup="$ra_zakres" />
+      <Button fx:id="btn_clear" layoutX="523.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#clearAll" text="Wyczyść" />
    </children>
 </AnchorPane>
