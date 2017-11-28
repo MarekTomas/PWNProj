@@ -65,8 +65,8 @@ public class DodPytController {
 	static String odp3;
 	static String odp4;
 	static String zakres;
-	static boolean flaga = false;
 
+	
 	@FXML
 	void clearAll(MouseEvent event) {
 		ta_pytanie.clear();
@@ -115,7 +115,7 @@ public class DodPytController {
 				poprawna = 1;
 			else if (ra_nr2.isSelected())
 				poprawna = 2;
-			else if (ra_nr2.isSelected())
+			else if (ra_nr3.isSelected())
 				poprawna = 3;
 			else
 				poprawna = 4;

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="595.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.ListakursController">
+<AnchorPane prefHeight="595.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.ListakursView">
    <children>
       <TableView fx:id="table_view" layoutX="37.0" layoutY="24.0" prefHeight="515.0" prefWidth="758.0" AnchorPane.bottomAnchor="56.0" AnchorPane.topAnchor="24.0">
         <columns>

@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 
 public class PotwPytanieController {
 
+
 	@FXML
 	private Label lbl_e1;
 
