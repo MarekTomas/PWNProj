@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
@@ -44,7 +45,7 @@ public class DodPytController {
 	void wsteczAdminView(MouseEvent event) throws IOException {
 		Pomocnicze przejdz = new Pomocnicze();
 		przejdz.okno("/app/View/AdminView.fxml", "Administrator", event);
-		
+
 	}
 
 	@FXML
@@ -53,27 +54,30 @@ public class DodPytController {
 	}
 
 	@FXML
-	void zatwierdz(MouseEvent event) {
+	void zatwierdz(MouseEvent event) throws IOException {
 		
-		System.out.println(ra_zakres.getSelectedToggle());
+		String pyt = ta_pytanie.getText();
+		String poprawna = ta_popr_odp.getText();
+		String bledna1 = ta_bledna1.getText();
+		String bledna2 = ta_bledna2.getText();
+		String bledna3 = ta_bledna2.getText();
 		
-		
-		
-		if (ta_pytanie.getText().isEmpty() || ta_popr_odp.getText().isEmpty() || ta_bledna1.getText().isEmpty()
-				|| ta_bledna2.getText().isEmpty() || ta_bledna3.getText().isEmpty()
+		if (pyt.isEmpty() || poprawna.isEmpty() ||bledna1.isEmpty()
+				|| bledna2.isEmpty() || bledna3.isEmpty()
 				|| ra_zakres.getSelectedToggle() == null) {
-			
-			Alert ostrz = new Alert(AlertType.WARNING); 
-			ostrz.setContentText("Nie zosta³y wype³nione wszystkie wymagane pola"); 
-			ostrz.setHeaderText("Wype³nij wszystkie pola"); 
-			ostrz.setTitle("Ostrze¿enie!"); 
-			ostrz.showAndWait(); 
-		}
-		//}else
-			DBConnectorMW baza = new DBConnectorMW();
-			String zakres = ra_zakres.selectedToggleProperty().toString();
-			//baza.insert("Insert into Pytania (zakres, pytania, odp_1, odp_2, odp_3, odp_poprawna) values ('"+Trim(ta_bledna1.getText())");
 
+			Alert ostrz = new Alert(AlertType.WARNING);
+			ostrz.setContentText("Nie zosta³y wype³nione wszystkie wymagane pola");
+			ostrz.setHeaderText("Wype³nij wszystkie pola");
+			ostrz.setTitle("Ostrze¿enie!");
+			ostrz.showAndWait();
+		} else {
+			String zakres = ((RadioButton) ra_zakres.getSelectedToggle()).getText();
+						
+			Pomocnicze przejdz = new Pomocnicze();
+			przejdz.okno("/app/View/PotwPytanieView.fxml", "Zatwierdzenie pytania");
+			
+		}
 	}
 
 }

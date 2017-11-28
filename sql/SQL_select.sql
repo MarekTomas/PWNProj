@@ -15,3 +15,5 @@ group by users.imie, users.nazwisko, users.edycja;
 
 # Statystyki: procent poprawnych dla wszystkich ogółem
 select round(sum(procent_poprawnych)/count(id)) from statystyki;
+
+select * from pytania;
