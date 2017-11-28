@@ -46,6 +46,11 @@ public class DodPytController {
 	static String bledna2;
 	static String bledna3;
 	static String zakres;
+	static boolean flaga = false;
+	
+	
+
+	@FXML Button btn_clear;
 
 	
 	@FXML
@@ -97,6 +102,7 @@ public class DodPytController {
 			
 			
 		}
+	
 	}
 
 }
