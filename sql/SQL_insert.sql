@@ -38,7 +38,3 @@ insert into statystyki (login, procent_poprawnych) values('krzysiek', 90);
 insert into statystyki (login, procent_poprawnych) values('darek', 10);
 insert into statystyki (login, procent_poprawnych) values('darek', 20);
 insert into statystyki (login, procent_poprawnych) values('darek', 30);
-
-Insert into Pytania (zakres, pytanie, odp_1, odp_2, odp_3, odp_poprawna) values ('"
-    			+ DodPytController.zakres + "', '" + DodPytController.pyt + "', '" + DodPytController.bledna1 + "', '"
-    			+ DodPytController.bledna2 + "', '" + DodPytController.bledna3 + "';

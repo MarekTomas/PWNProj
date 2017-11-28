@@ -12,19 +12,31 @@ import javafx.scene.input.MouseEvent;
 public class PotwPytanieController {
 
 	@FXML
+	private Label lbl_e1;
+
+	@FXML
+	private Label lbl_e2;
+
+	@FXML
+	private Label lbl_e3;
+
+	@FXML
+	private Label lbl_e4;
+
+	@FXML
 	private Label lbl_pyt;
 
 	@FXML
-	private Label lbl_poprawna;
+	private Label lbl_odp1;
 
 	@FXML
-	private Label lbl_bledna1;
+	private Label lbl_odp2;
 
 	@FXML
-	private Label lbl_bledna2;
+	private Label lbl_odp3;
 
 	@FXML
-	private Label lbl_bledna3;
+	private Label lbl_odp4;
 
 	@FXML
 	private Label lbl_zakres;
@@ -44,10 +56,10 @@ public class PotwPytanieController {
 	@FXML
 	void zatwierdz(MouseEvent event) {
 		DBConnectorMW baza = new DBConnectorMW();
-		baza.insert("Insert into Pytania (zakres, pytanie, odp_1, odp_2, odp_3, odp_poprawna) values ('"
-				+ DodPytController.zakres + "', '" + DodPytController.pyt + "', '" + DodPytController.bledna1 + "', '"
-				+ DodPytController.bledna2 + "', '" + DodPytController.bledna3 + "', '" + DodPytController.poprawna
-				+ "')");
+		baza.insert("Insert into Pytania (zakres, pytanie, odp_1, odp_2, odp_3, odp_4, odp_poprawna) values ('"
+				+ DodPytController.zakres + "', '" + DodPytController.pyt + "', '" + DodPytController.odp1 + "', '"
+				+ DodPytController.odp2 + "', '" + DodPytController.odp3 + "', '" + DodPytController.odp4 + "', "
+				+ DodPytController.poprawna + ")");
 
 		Alert ostrz = new Alert(AlertType.INFORMATION);
 		ostrz.setHeaderText(
@@ -61,11 +73,31 @@ public class PotwPytanieController {
 
 	public void initialize() {
 		lbl_pyt.setText(DodPytController.pyt);
-		lbl_poprawna.setText(DodPytController.poprawna);
-		lbl_bledna1.setText(DodPytController.bledna1);
-		lbl_bledna2.setText(DodPytController.bledna2);
-		lbl_bledna3.setText(DodPytController.bledna3);
+		lbl_odp1.setText(DodPytController.odp1);
+		lbl_odp2.setText(DodPytController.odp2);
+		lbl_odp3.setText(DodPytController.odp3);
+		lbl_odp4.setText(DodPytController.odp4);
 		lbl_zakres.setText(DodPytController.zakres);
+
+		switch (DodPytController.poprawna) {
+		case 1:
+			lbl_e1.setText("Poprawna odpowiedü");
+			lbl_odp1.setUnderline(true);
+			break;
+
+		case 2:
+			lbl_e2.setText("Poprawna odpowiedü");
+			lbl_odp2.setUnderline(true);
+			break;
+		case 3:
+			lbl_e3.setText("Poprawna odpowiedü");
+			lbl_odp3.setUnderline(true);
+			break;
+		case 4:
+			lbl_e4.setText("Poprawna odpowiedü");
+			lbl_odp4.setUnderline(true);
+			break;
+		}
 	}
 
 }

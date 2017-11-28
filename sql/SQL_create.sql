@@ -1,11 +1,11 @@
 #drop database if exists projektquiz;
-create database projektquiz DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+create database projektquiz;
 use projektquiz;
-#drop table IF EXISTS Logowanie;
-#drop table IF EXISTS Admins;
-#drop table IF EXISTS Users;
-#drop table IF EXISTS Pytania;
-#drop table IF EXISTS Statystyki;
+drop table IF EXISTS Logowanie;
+drop table IF EXISTS Admins;
+drop table IF EXISTS Users;
+drop table IF EXISTS Pytania;
+drop table IF EXISTS Statystyki;
 
 create table Logowanie (
     id INT AUTO_INCREMENT,
@@ -38,11 +38,12 @@ create table Users (
 create table Pytania (
     id INT AUTO_INCREMENT,
     zakres VARCHAR(25) NOT NULL,
-	pytanie text NOT NULL,
-    odp_1 text NOT NULL,
-    odp_2 text NOT NULL,
-    odp_3 text NOT NULL,
-    odp_poprawna text NOT NULL,
+	pytanie VARCHAR(255) NOT NULL,
+    odp_1 VARCHAR(255) NOT NULL,
+    odp_2 VARCHAR(255) NOT NULL,
+    odp_3 VARCHAR(255) NOT NULL,
+    odp_4 VARCHAR(255) NOT NULL,
+    odp_poprawna tinyint NOT NULL,
 	PRIMARY KEY (id)
     );
     

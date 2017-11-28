@@ -35,22 +35,22 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" cache="true" contentDisplay="CENTER" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź poprawna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+            <Label fx:id="lbl_e1" alignment="CENTER" cache="true" contentDisplay="CENTER" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź błędna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" cache="true" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź błędna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+            <Label fx:id="lbl_e2" alignment="CENTER" cache="true" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź błędna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" cache="true" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź błędna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="3">
+            <Label fx:id="lbl_e3" alignment="CENTER" cache="true" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź błędna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" cache="true" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź błędna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="4">
+            <Label fx:id="lbl_e4" alignment="CENTER" cache="true" mnemonicParsing="true" prefHeight="67.0" prefWidth="370.0" text=" Odpowiedź błędna" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="lbl_poprawna" alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="lbl_odp1" alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -77,7 +77,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="lbl_bledna1" alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="lbl_odp2" alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -85,7 +85,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="lbl_bledna2" alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="lbl_odp3" alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -93,7 +93,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="lbl_bledna3" alignment="CENTER" contentDisplay="CENTER" prefHeight="102.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="lbl_odp4" alignment="CENTER" contentDisplay="CENTER" prefHeight="102.0" prefWidth="611.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

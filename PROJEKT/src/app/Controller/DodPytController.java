@@ -17,16 +17,16 @@ public class DodPytController {
 	private TextArea ta_pytanie;
 
 	@FXML
-	private TextArea ta_popr_odp;
+	private TextArea ta_odp1;
 
 	@FXML
-	private TextArea ta_bledna1;
+	private TextArea ta_odp2;
 
 	@FXML
-	private TextArea ta_bledna2;
+	private TextArea ta_odp3;
 
 	@FXML
-	private TextArea ta_bledna3;
+	private TextArea ta_odp4;
 
 	@FXML
 	private Button btn_wstecz;
@@ -39,31 +39,46 @@ public class DodPytController {
 
 	@FXML
 	private ToggleGroup ra_zakres;
-	
+
+	@FXML
+	private Button btn_clear;
+
+	@FXML
+	private ToggleGroup ra_nr_odpowiedzi;
+
+	@FXML
+	private RadioButton ra_nr1;
+
+	@FXML
+	private RadioButton ra_nr2;
+
+	@FXML
+	private RadioButton ra_nr3;
+
+	@FXML
+	private RadioButton ra_nr4;
+
 	static String pyt;
-	static String poprawna;
-	static String bledna1;
-	static String bledna2;
-	static String bledna3;
+	static int poprawna;
+	static String odp1;
+	static String odp2;
+	static String odp3;
+	static String odp4;
 	static String zakres;
 	static boolean flaga = false;
-	
-	
 
-	@FXML Button btn_clear;
-
-	
 	@FXML
-    void clearAll(MouseEvent event) {
-		ta_bledna1.clear();
-		ta_bledna2.clear();
-		ta_bledna3.clear();
-		ta_popr_odp.clear();
+	void clearAll(MouseEvent event) {
 		ta_pytanie.clear();
+		ta_odp1.clear();
+		ta_odp2.clear();
+		ta_odp3.clear();
+		ta_odp4.clear();
+		ra_nr_odpowiedzi.selectToggle(null);
 		ra_zakres.selectToggle(null);
-		
-    }
-		
+
+	}
+
 	@FXML
 	void wsteczAdminView(MouseEvent event) throws IOException {
 		Pomocnicze przejdz = new Pomocnicze();
@@ -78,16 +93,15 @@ public class DodPytController {
 
 	@FXML
 	void zatwierdz(MouseEvent event) throws IOException {
-		
+
 		pyt = ta_pytanie.getText();
-		poprawna = ta_popr_odp.getText();
-		bledna1 = ta_bledna1.getText();
-		bledna2 = ta_bledna2.getText();
-		bledna3 = ta_bledna2.getText();
-		
-		if (pyt.isEmpty() || poprawna.isEmpty() ||bledna1.isEmpty()
-				|| bledna2.isEmpty() || bledna3.isEmpty()
-				|| ra_zakres.getSelectedToggle() == null) {
+		odp1 = ta_odp1.getText();
+		odp2 = ta_odp2.getText();
+		odp3 = ta_odp3.getText();
+		odp4 = ta_odp4.getText();
+
+		if (pyt.isEmpty() || odp1.isEmpty() || odp2.isEmpty() || odp3.isEmpty() || odp4.isEmpty()
+				|| ra_zakres.getSelectedToggle() == null || ra_nr_odpowiedzi.getSelectedToggle() == null) {
 
 			Alert ostrz = new Alert(AlertType.WARNING);
 			ostrz.setContentText("Nie zosta³y wype³nione wszystkie wymagane pola");
@@ -96,14 +110,21 @@ public class DodPytController {
 			ostrz.showAndWait();
 		} else {
 			zakres = ((RadioButton) ra_zakres.getSelectedToggle()).getText();
-						
+			
+			if (ra_nr1.isSelected())
+				poprawna = 1;
+			else if (ra_nr2.isSelected())
+				poprawna = 2;
+			else if (ra_nr2.isSelected())
+				poprawna = 3;
+			else
+				poprawna = 4;
+			
 			Pomocnicze przejdz = new Pomocnicze();
 			przejdz.okno("/app/View/PotwPytanieView.fxml", "Zatwierdzenie pytania");
-			
-			
+
 		}
-	
+
 	}
 
 }
-
