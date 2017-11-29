@@ -16,7 +16,7 @@ create table Logowanie (
     CONSTRAINT uq_loginRola UNIQUE (login, rola)
     );
 
-create table Admins (
+create table Egzaminatorzy (
     id INT AUTO_INCREMENT,
     imie VARCHAR(25) NOT NULL,
 	nazwisko VARCHAR(35) NOT NULL,
@@ -25,7 +25,7 @@ create table Admins (
     FOREIGN KEY (login) REFERENCES Logowanie (login)
     );
 
-create table Users (
+create table Kursanci (
     id INT AUTO_INCREMENT,
     imie VARCHAR(25) NOT NULL,
 	nazwisko VARCHAR(35) NOT NULL,

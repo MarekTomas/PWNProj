@@ -1,38 +1,59 @@
 package app.Controller;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-import app.Database.DBConnector;
-import app.Model.Users;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
-public class ListakursView {
+public class ListaStatController {
 
-	@FXML
-	TableView<Users> table_view;
+    @FXML
+    private TableView<?> table_view;
 
-	// obiekt po³¹czenia z db
-	public DBConnector db;
+    @FXML
+    private TableColumn<?, ?> col_imie;
 
-	// obiekt do przechowywania listy
-	public ObservableList<Users> data;
+    @FXML
+    private TableColumn<?, ?> col_nazwisko;
 
-	@FXML Button btn_select;
+    @FXML
+    private TableColumn<?, ?> col_grupa;
 
-	public void initialize() throws IOException, SQLException {
-		db = new DBConnector();
-	}
+    @FXML
+    private TableColumn<?, ?> col_liczbaTest;
+
+    @FXML
+    private TableColumn<?, ?> col_sredni;
+
+    @FXML
+    private Button btn_wyjdz;
+
+    @FXML
+    private Button btn_wstecz;
+
+    @FXML
+    private TextField tf_filter;
+
+    @FXML
+    void filter(KeyEvent event) {
+
+    }
+
+    @FXML
+    void wstecz(MouseEvent event) {
+
+    }
+
+    @FXML
+    void wyjdz(MouseEvent event) {
+    	System.exit(0);
+    }
+
+
+
+
 
 	@FXML
 	void btnSelectAction(ActionEvent event) throws IOException, SQLException {
@@ -56,7 +77,7 @@ public class ListakursView {
 	}
 	
 	//Filtrowanie
-	/*@FXML
+	@FXML
 	public void filter(KeyEvent event) throws ClassNotFoundException, SQLException {
 		Connection conn = db.Connection();
 		data = FXCollections.observableArrayList();
@@ -68,16 +89,18 @@ public class ListakursView {
 			data.add(new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getString(5)));
 
 		}
-		id.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
-		name.setCellValueFactory(new PropertyValueFactory<Users, String>("name"));
-		last.setCellValueFactory(new PropertyValueFactory<Users, String>("last"));
-		salary.setCellValueFactory(new PropertyValueFactory<Users, Double>("salary"));
-		position.setCellValueFactory(new PropertyValueFactory<Users, String>("position"));
+		name.setCellValueFactory(new PropertyValueFactory<Statystyki, String>("name"));
+		last.setCellValueFactory(new PropertyValueFactory<Statystyki, String>("last"));
+		group.setCellValueFactory(new PropertyValueFactory<Statystyki, String>("salary"));
+		.setCellValueFactory(new PropertyValueFactory<Statystyki, String>("position"));
 		table_view.setItems(null);
 		table_view.setItems(data);
 
-	}*/
+	}
 	
+	public void initialize() {
+		
+	}
 	
 
 }
