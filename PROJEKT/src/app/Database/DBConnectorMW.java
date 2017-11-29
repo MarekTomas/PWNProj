@@ -13,6 +13,7 @@ public class DBConnectorMW {
 	private static Connection con;
 	private static Statement stmt;
 
+
 	private static void connect() {
 		try {
 			// uwierzytelnianie sterownika
@@ -25,68 +26,7 @@ public class DBConnectorMW {
 		}
 	}
 
-	/*public void zapytanie(String query, String format, String naglowek2, String naglowek3) {
-
-		connect();
-		try {
-			rs = stmt.executeQuery(query);
-			System.out.printf(format, "ID", naglowek2, naglowek3);
-			System.out.println();
-			while (rs.next()) {
-				// kolejnoœæ kolumn obs³ugiwana w zapytaniu
-				System.out.printf(format, rs.getString(1), rs.getString(2), rs.getString(3));
-				System.out.println();
-			}
-
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("\n!!!B³¹d na zapytaniu z czterema kolumnami (1):\n" + e);
-		}
-
-	}*/
-
-	/*public void zapytanie(String query, String format, String naglowek2, String naglowek3, String naglowek4) {
-
-		connect();
-		try {
-			rs = stmt.executeQuery(query);
-			System.out.printf(format, "ID", naglowek2, naglowek3, naglowek4);
-			System.out.println();
-			while (rs.next()) {
-				// kolejnoœæ kolumn obs³ugiwana w zapytaniu
-				System.out.printf(format, rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
-				System.out.println();
-			}
-
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("\n!!!B³¹d na zapytaniu z piêcioma kolumnami (2):\n" + e);
-			
-		}
-
-	}*/
-
-	/*public void zapytanie(String query, String format, String naglowek2, String naglowek3, String naglowek4,
-			String naglowek5) {
-
-		connect();
-		try {
-			rs = stmt.executeQuery(query);
-			System.out.printf(format, "ID", naglowek2, naglowek3, naglowek4, naglowek5);
-			System.out.println();
-			while (rs.next()) {
-				// kolejnoœæ kolumn obs³ugiwana w zapytaniu
-				System.out.printf(format, rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5));
-				System.out.println();
-			}
-
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("\n!!!B³¹d na zapytaniu z 6-ioma kolumnami (3):" + e);
-
-		}
-	}*/
+	
 
 	// ===========================================================================================
 	// wstawianie nowego rekordu/update
@@ -119,29 +59,29 @@ public class DBConnectorMW {
 		return zbior_id;
 	}
 
-
-
-
-	public void update(Scanner rl, String changedValueName, String id, String databaseTabelName, String databaseColumnNameId, String databaseUpdatedColumnName) {
+	public void update(Scanner rl, String changedValueName, String id, String databaseTabelName,
+			String databaseColumnNameId, String databaseUpdatedColumnName) {
 		while (true) {
-		System.out.println("WprowadŸ "+ changedValueName +":");
-		String temp = rl.nextLine();
-		String temp_confirmed = temp.substring(0, 1).toUpperCase() + temp.substring(1, temp.length()).toLowerCase();
-		System.out.println("Wprowadzono  "+ changedValueName +": '" + temp_confirmed +"'.\n('Y'- Zatwierdzenie || dowolny przycisk aby poprawiæ || 'Q'- poprzedniego menu bez zapisywania zmian,dowolny przycisk aby poprawiæ.");
-		String choice_wew = rl.nextLine().toUpperCase();
-		if (choice_wew.equals("Y")) {
-			connect();
-			try {
-				stmt.executeUpdate("Update "+ databaseTabelName +" set " + databaseUpdatedColumnName + " = '"+ temp_confirmed +"' where "+ databaseColumnNameId +" = " + id);
-				con.close();
-			} catch (SQLException e) {
-				System.out.println("\n!!!B³¹d na insert:\n" + e);
-			}
-			System.out.println("Zaktualizowano rekord");
-			break;
-			
-		}else if (choice_wew.equals("Q")) 				
-			break;
+			System.out.println("WprowadŸ " + changedValueName + ":");
+			String temp = rl.nextLine();
+			String temp_confirmed = temp.substring(0, 1).toUpperCase() + temp.substring(1, temp.length()).toLowerCase();
+			System.out.println("Wprowadzono  " + changedValueName + ": '" + temp_confirmed
+					+ "'.\n('Y'- Zatwierdzenie || dowolny przycisk aby poprawiæ || 'Q'- poprzedniego menu bez zapisywania zmian,dowolny przycisk aby poprawiæ.");
+			String choice_wew = rl.nextLine().toUpperCase();
+			if (choice_wew.equals("Y")) {
+				connect();
+				try {
+					stmt.executeUpdate("Update " + databaseTabelName + " set " + databaseUpdatedColumnName + " = '"
+							+ temp_confirmed + "' where " + databaseColumnNameId + " = " + id);
+					con.close();
+				} catch (SQLException e) {
+					System.out.println("\n!!!B³¹d na insert:\n" + e);
+				}
+				System.out.println("Zaktualizowano rekord");
+				break;
+
+			} else if (choice_wew.equals("Q"))
+				break;
 		}
 	}
 }

@@ -5,9 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnector {
-	public Connection Connection() throws SQLException {
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/przychodnia?verifyServerCertificate=false&useSSL=true", "root",
-				"MarianPetarda1");
+	public Connection Connection() throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/projektquiz?useSSL=false", "root",
+				"123MWreaktor");
 	}
 
 }

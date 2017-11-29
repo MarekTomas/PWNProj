@@ -1,10 +1,7 @@
-#to mnie interesuje
 # Statystyki: procent poprawnych dla konkretnego usera sumaryczne
-use projectquiz;
-
 select kursant.imie, kursant.nazwisko, kursant.edycja, count(statystyki.id), round(sum(statystyki.procent_poprawnych)/count(statystyki.id)) from statystyki 
 join kursant on kursant.login = statystyki.login
-where statystyki.login = 'maciek'; #do sparametryzowania
+where statystyki.login = 'maciek';
 
 # Statystyki: procent poprawnych dla konkretnego usera per test
 select kursant.imie, kursant.nazwisko, statystyki.nr_testu, statystyki.procent_poprawnych
@@ -24,3 +21,10 @@ group by kursant.imie, kursant.nazwisko, kursant.edycja;
 
 # Statystyki: procent poprawnych dla wszystkich ogółem
 select round(sum(procent_poprawnych)/count(id)) from statystyki;
+
+
+select * from statystyki where login = 'maciek';
+
+select kursant.imie, kursant.nazwisko, kursant.edycja, count(statystyki.id), round(sum(statystyki.procent_poprawnych)/count(statystyki.id)) from statystyki 
+join kursant on kursant.login = statystyki.login
+where statystyki.login = 'maciek';
