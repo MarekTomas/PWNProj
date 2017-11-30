@@ -28,3 +28,4 @@ select * from statystyki where login = 'maciek';
 select kursant.imie, kursant.nazwisko, kursant.edycja, count(statystyki.id), round(sum(statystyki.procent_poprawnych)/count(statystyki.id)) from statystyki 
 join kursant on kursant.login = statystyki.login
 where statystyki.login = 'maciek';
+#test
